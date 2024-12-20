@@ -29,6 +29,16 @@ public class BookManager {
         return result;
     }
 
+    public List<Book> getAvailableBooks() {
+        List<Book> availableBooks = new ArrayList<>();
+        for (Book book : books) {
+            if (!book.isLoaned()) {
+                availableBooks.add(book);
+            }
+        }
+        return availableBooks;
+    }
+
     public List<Book> getBooks() {
         return books;
     }
