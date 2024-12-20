@@ -25,10 +25,14 @@ public class LoanManager {
         }
 
         if (foundBook.isLoaned()) {
-            System.out.println("이미 대출된 도서입니다: " + foundBook.getLoanedBy());
+            System.out.println("이미 대출된 도서입니다: " + foundBook.getLoanedBy() +
+                    ", 대출일: " + foundBook.getLoanDate() +
+                    ", 반납일: " + foundBook.getReturnDate());
         } else {
-            foundBook.loan(userName);
-            System.out.println("대출 완료: " + foundBook.getTitle());
+            foundBook.loan(userName); // Book 클래스의 loan 메서드 호출
+            System.out.println("대출 완료: " + foundBook.getTitle() +
+                    ", 대출일: " + foundBook.getLoanDate() +
+                    ", 반납일: " + foundBook.getReturnDate());
         }
     }
 
@@ -69,7 +73,10 @@ public class LoanManager {
         boolean hasLoans = false;
         for (Book book : books) {
             if (book.isLoaned()) {
-                System.out.println(book.getId() + ", " + book.getTitle() + " - 대출자: " + book.getLoanedBy());
+                System.out.println(book.getId() + ", " + book.getTitle() +
+                        " - 대출자: " + book.getLoanedBy() +
+                        ", 대출일: " + book.getLoanDate() +
+                        ", 반납일: " + book.getReturnDate());
                 hasLoans = true;
             }
         }
