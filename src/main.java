@@ -34,14 +34,14 @@ public class main {
                     }
                     break;
                 case "3":
-                    System.out.print("대출할 도서 ID: ");
-                    String loanId = scanner.nextLine();
-                    LoanManager.loanBook(bookManager.getBooks(), loanId, userName);
+                    System.out.print("대출할 도서 제목: ");
+                    String loanTitle = scanner.nextLine();
+                    LoanManager.loanBookByTitle(bookManager.getBooks(), loanTitle, userName);
                     break;
                 case "4":
-                    System.out.print("반납할 도서 ID: ");
-                    String returnId = scanner.nextLine();
-                    LoanManager.returnBook(bookManager.getBooks(), returnId, userName);
+                    System.out.print("반납할 도서 제목: ");
+                    String returnTitle = scanner.nextLine();
+                    LoanManager.returnBookByTitle(bookManager.getBooks(), returnTitle, userName);
                     break;
                 case "5":
                     if (!userName.equals("manager")) {
